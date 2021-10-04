@@ -38,7 +38,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.decagon.anietie.simplecrypto.ui.OnboardingFragment"
+        android:name="com.decagon.anietie.simplecrypto.ui.onboarding.OnboardingFragment"
         android:label="Get Started"
         tools:layout="@layout/fragment_onboarding" />
     <fragment

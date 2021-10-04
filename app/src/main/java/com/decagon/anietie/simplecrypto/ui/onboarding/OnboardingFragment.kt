@@ -1,4 +1,4 @@
-package com.decagon.anietie.simplecrypto.ui
+package com.decagon.anietie.simplecrypto.ui.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -49,7 +49,9 @@ class OnboardingFragment : Fragment() {
         }
 
         binding.signInButton.setOnClickListener {
-
+            activity?.supportFragmentManager?.let {
+                SignInDialogFragment().show(it, "Sign In")
+            }
             savePrefsData()
         }
     }

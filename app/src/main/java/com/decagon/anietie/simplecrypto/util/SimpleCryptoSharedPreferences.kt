@@ -8,7 +8,7 @@ import androidx.core.content.edit
 class SimpleCryptoSharedPreferences constructor(context: Context) {
 
     private var sharedPreferences: SharedPreferences =
-        PreferenceManager.getDefaultSharedPreferences(context)
+        androidx.preference.PreferenceManager.getDefaultSharedPreferences(context)
 
     fun setString(key: String, value: String) {
         sharedPreferences.edit {
