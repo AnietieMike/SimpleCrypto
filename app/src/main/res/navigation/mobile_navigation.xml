@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/onboardingFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.decagon.anietie.simplecrypto.ui.home.HomeFragment"
+        android:label="Welcome!"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_converter"
+        android:name="com.decagon.anietie.simplecrypto.ui.reflow.ConverterFragment"
+        android:label="@string/menu_converter"
+        tools:layout="@layout/fragment_converter" />
+
+    <fragment
+        android:id="@+id/nav_wallet"
+        android:name="com.decagon.anietie.simplecrypto.ui.wallet.WalletFragment"
+        android:label="@string/menu_wallet"
+        tools:layout="@layout/fragment_wallet" >
+        <action
+            android:id="@+id/action_nav_wallet_to_cryptoTransactionFragment"
+            app:destination="@id/cryptoTransactionFragment" />
+        <argument
+            android:name="cryptocurrency"
+            app:argType="string"
+            android:defaultValue="BTC" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.decagon.anietie.simplecrypto.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.decagon.anietie.simplecrypto.ui.OnboardingFragment"
+        android:label="Get Started"
+        tools:layout="@layout/fragment_onboarding" />
+    <fragment
+        android:id="@+id/cryptoTransactionFragment"
+        android:name="com.decagon.anietie.simplecrypto.ui.wallet.CryptoTransactionFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_crypto_transaction">
+        <argument
+            android:name="crypto"
+            app:argType="string"
+            android:defaultValue="BTC" />
+    </fragment>
+</navigation>

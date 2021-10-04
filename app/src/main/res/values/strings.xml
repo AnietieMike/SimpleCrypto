@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Simple Crypto</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_transform">Transform</string>
+    <string name="menu_converter">Convert</string>
+    <string name="menu_wallet">Wallet</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="lorem_ipsum_title">Lorem Ipsum"</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply placeholder text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry\'s standard placeholder text ever
+        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+        type specimen book"
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_description">Simple Crypto allows you to track the current rate of cryptocurrencies, convert and purchase a crypto of your choice</string>
+    <string name="menu_home">Home</string>
+    <string name="market_cap_text">Market Cap:</string>
+    <string name="wallet_balance">Wallet Balance:</string>
+    <string name="buy_text">Buy</string>
+    <string name="sell_text">Sell</string>
+    <string name="sign_in">Sign In</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="ethereum">Ethereum</string>
+    <string name="ripple">Ripple</string>
+    <string name="dogecoin">Dogecoin</string>
+    <string name="litecoin">Litecoin</string>
+    <string name="dash">Dash</string>
+    <string name="item_selection">item selection</string>
+    <string name="feature_text">This feature is coming soon!</string>
+    <string name="sign_in_text">To be able to make transactions with your wallet, you have to be signed in.</string>
+    <string name="choose_crypto">Choose Crypto</string>
+    <string name="amount_dash">Dash:</string>
+    <string name="transaction_title_text">How much %crypto would you like to buy?</string>
+    <string name="amount_hint">Enter an amount</string>
+    <string name="done_button_text">Done</string>
+    <string name="transaction_success_text">Your transaction was successful</string>
+</resources>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:focusable="true"
+    android:clickable="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/island_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/crypto_icon_image_view"
+            android:layout_width="@dimen/item_transform_image_length"
+            android:layout_height="@dimen/item_transform_image_length"
+            android:layout_gravity="start"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.19"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/text_view_item_transform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntu"
+            app:layout_constraintBottom_toBottomOf="@+id/crypto_icon_image_view"
+            app:layout_constraintStart_toEndOf="@+id/crypto_icon_image_view"
+            app:layout_constraintTop_toTopOf="@+id/crypto_icon_image_view"
+            tools:text="BTC" />
+
+        <TextView
+            android:id="@+id/crypto_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/fira_sans_semibold"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/market_cap_text_view"
+            app:layout_constraintStart_toStartOf="@+id/crypto_icon_image_view"
+            app:layout_constraintTop_toTopOf="@+id/market_cap_text_view"
+            tools:text="Bitcoin" />
+
+        <TextView
+            android:id="@+id/crypto_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="end|top"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/fira_sans_semibold"
+            tools:text="$47,422.00" />
+
+        <TextView
+            android:id="@+id/market_cap_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/market_cap_text"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/crypto_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="bottom|end"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/fira_sans_semibold"
+            app:layout_constraintEnd_toEndOf="@+id/crypto_price"
+            app:layout_constraintTop_toBottomOf="@+id/crypto_price"
+            tools:text="9.7%" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
