@@ -42,6 +42,7 @@ class SignInDialogFragment : DialogFragment() {
                 // Pass the userName through shared preferences to the home fragment
                 SimpleCryptoSharedPreferences(requireContext()).setString("UserName", userName)
                 SimpleCryptoSharedPreferences(requireContext()).setString("UserPin", userPin)
+                SimpleCryptoSharedPreferences(requireContext()).setInt("WalletBalance", 500)
                 findNavController().navigate(R.id.nav_home)
                 dismiss()
             }

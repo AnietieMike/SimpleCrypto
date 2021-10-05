@@ -4,31 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sailor_blue"
     tools:context=".ui.wallet.WalletFragment">
 
     <TextView
         android:id="@+id/sign_in_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:layout_margin="8dp"
+        android:fontFamily="@font/ubuntu"
+        android:padding="16dp"
         android:text="@string/sign_in_text"
-        android:textColor="@color/sailor_blue"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/island_green"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_guideline" />
 
     <Button
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/sailor_blue"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/island_green"
         android:fontFamily="@font/fira_sans_semibold"
         android:text="@string/sign_in"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:textColor="@color/sailor_blue"
+        app:cornerRadius="8dp"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sign_in_text" />
@@ -39,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:backgroundTint="@color/sailor_blue"
+        android:backgroundTint="@color/island_green"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:cardPreventCornerOverlap="true"
@@ -79,9 +85,9 @@
             android:layout_marginTop="100dp"
             android:layout_marginBottom="35dp"
             android:fontFamily="@font/fira_sans_semibold"
+            android:text="@string/wallet_acct_balance"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="$500" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/cardNumber"
@@ -92,7 +98,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/fira_sans_semibold"
-            android:text="10001"
+            android:text="10011"
             android:textColor="@color/white" />
 
         <ImageView
@@ -116,8 +122,9 @@
         android:backgroundTint="@color/island_green"
         android:fontFamily="@font/fira_sans_semibold"
         android:text="@string/buy_text"
-        android:textSize="18sp"
         android:textColor="@color/sailor_blue"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
         app:layout_constraintStart_toStartOf="@+id/wallet_balance_cardView"
         app:layout_constraintTop_toBottomOf="@+id/wallet_balance_cardView" />
 
@@ -130,225 +137,244 @@
         android:backgroundTint="@color/island_green"
         android:fontFamily="@font/fira_sans_semibold"
         android:text="@string/sell_text"
-        android:textSize="18sp"
         android:textColor="@color/sailor_blue"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="@+id/wallet_balance_cardView"
         app:layout_constraintTop_toBottomOf="@+id/wallet_balance_cardView" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/bitcoin_cardView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/crypto_price_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/sailor_blue"
-        app:cardCornerRadius="8dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buy_button">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bitcoin_cardView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/ubuntu"
-            android:padding="16dp"
-            android:text="Bitcoin: "
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/sailor_blue"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="Bitcoin: "
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0.0001" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ethereum_cardView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="0.0001" />
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/sailor_blue"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bitcoin_cardView">
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="Ethereum: "
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/ethereum_cardView"
-        android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0.0001" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ripple_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/sailor_blue"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ethereum_cardView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="Ripple: "
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0.0001" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dogecoin_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/sailor_blue"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ripple_cardView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="Dogecoin: "
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0.0001" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/litecoin_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/sailor_blue"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dogecoin_cardView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="Litecoin: "
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0.0001" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dash_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/sailor_blue"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/litecoin_cardView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="@string/amount_dash"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="0.0001" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sign_in_guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/sailor_blue"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bitcoin_cardView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/ubuntu"
-            android:padding="16dp"
-            android:text="Ethereum: "
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="0.0001" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/ripple_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/sailor_blue"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ethereum_cardView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/ubuntu"
-            android:padding="16dp"
-            android:text="Ripple: "
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="0.0001" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/dogecoin_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/sailor_blue"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ripple_cardView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/ubuntu"
-            android:padding="16dp"
-            android:text="Dogecoin: "
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="0.0001" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/litecoin_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/sailor_blue"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dogecoin_cardView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/ubuntu"
-            android:padding="16dp"
-            android:text="Litecoin: "
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="0.0001" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/dash_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/sailor_blue"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/litecoin_cardView">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:fontFamily="@font/ubuntu"
-            android:padding="16dp"
-            android:text="@string/amount_dash"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:padding="16dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:text="0.0001" />
-
-    </androidx.cardview.widget.CardView>
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

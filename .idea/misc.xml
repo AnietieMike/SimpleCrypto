@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/splash_screen_layer_list.xml" value="0.13854166666666667" />
+        <entry key="app/src/main/res/layout-w600dp/fragment_home.xml" value="0.2039355992844365" />
+        <entry key="app/src/main/res/layout/fragment_converter.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_crypto_transaction.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_permission.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_sign_in_dialog.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_wallet.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_home.xml" value="0.25" />
       </map>
     </option>
   </component>

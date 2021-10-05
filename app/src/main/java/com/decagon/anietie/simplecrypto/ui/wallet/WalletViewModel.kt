@@ -1,4 +1,4 @@
-package com.decagon.anietie.simplecrypto.ui.home
+package com.decagon.anietie.simplecrypto.ui.wallet
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import com.decagon.anietie.simplecrypto.util.DataState
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class HomeViewModel constructor(
+class WalletViewModel constructor(
     private val simpleCryptoRepository: SimpleCryptoRepository
 ) : ViewModel() {
 

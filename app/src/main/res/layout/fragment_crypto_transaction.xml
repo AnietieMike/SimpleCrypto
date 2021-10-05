@@ -14,7 +14,7 @@
         android:fontFamily="@font/ubuntu"
         android:lineSpacingExtra="12sp"
         android:padding="16dp"
-        android:text="@string/transaction_title_text"
+        android:text="@string/transaction_title"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,9 +25,10 @@
         android:id="@+id/fiat_cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/island_green"
+        android:padding="8dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transaction_title">
@@ -35,10 +36,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:padding="6dp"
             android:text="USD"
             android:textColor="@color/white"
-            android:textSize="22sp"/>
+            android:textSize="20sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -46,22 +47,22 @@
         android:id="@+id/crypto_cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/island_green"
         android:padding="8dp"
         app:cardCornerRadius="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttons_guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fiat_cardView">
 
         <TextView
+            android:id="@+id/crypto_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:padding="6dp"
             android:text="BTC"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -69,11 +70,11 @@
         android:id="@+id/amount_edit_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginHorizontal="18dp"
         android:background="@drawable/background_item_transaction"
-        android:padding="16dp"
         android:hint="@string/amount_hint"
         android:inputType="number"
+        android:padding="10dp"
         android:textColor="@color/sailor_blue"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/fiat_cardView"
@@ -82,12 +83,12 @@
         app:layout_constraintTop_toTopOf="@+id/fiat_cardView" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/crypto_amount_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/background_item_transaction"
-        android:padding="16dp"
-        android:text="0.0024"
+        android:padding="10dp"
         android:textColor="@color/sailor_blue"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/crypto_cardView"
@@ -99,29 +100,25 @@
         android:id="@+id/proceed_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/island_green"
         android:fontFamily="@font/fira_sans_semibold"
-        android:padding="12dp"
-        android:layout_margin="16dp"
+        android:padding="8dp"
         android:text="Proceed"
         android:textSize="22sp"
+        android:enabled="false"
         app:cornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttons_guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/crypto_amount_textView" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/lottie_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.05" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/buttons_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

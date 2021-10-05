@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import com.decagon.anietie.simplecrypto.R
 import com.decagon.anietie.simplecrypto.databinding.FragmentPermissionBinding
 
@@ -25,7 +26,8 @@ class ConfirmationFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentPermissionBinding.bind(view)
         binding.continueButton.setOnClickListener {
-            println("Do something")
+            findNavController().navigate(R.id.nav_wallet)
+            dialog?.dismiss()
         }
     }
 }

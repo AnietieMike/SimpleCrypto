@@ -10,6 +10,10 @@ import com.decagon.anietie.simplecrypto.R
 import com.decagon.anietie.simplecrypto.databinding.FragmentOnboardingBinding
 import com.decagon.anietie.simplecrypto.util.SimpleCryptoSharedPreferences
 
+/**
+ * This fragment gives the user a quick overview of what the app can do
+ * and allows the user to sign in.
+ */
 class OnboardingFragment : Fragment() {
 
     private var _binding: FragmentOnboardingBinding? = null

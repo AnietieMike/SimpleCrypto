@@ -22,7 +22,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="onboarding_description">Simple Crypto allows you to track the current rate of cryptocurrencies, convert and purchase a crypto of your choice</string>
     <string name="menu_home">Home</string>
-    <string name="market_cap_text">Market Cap:</string>
+    <string name="market_cap_text">Price Change:</string>
     <string name="wallet_balance">Wallet Balance:</string>
     <string name="buy_text">Buy</string>
     <string name="sell_text">Sell</string>
@@ -35,11 +35,19 @@
     <string name="dash">Dash</string>
     <string name="item_selection">item selection</string>
     <string name="feature_text">This feature is coming soon!</string>
-    <string name="sign_in_text">To be able to make transactions with your wallet, you have to be signed in.</string>
+    <string name="sign_in_text">To be able to make transactions with your wallet, you have to be signed in to an account.</string>
     <string name="choose_crypto">Choose Crypto</string>
     <string name="amount_dash">Dash:</string>
-    <string name="transaction_title_text">How much %crypto would you like to buy?</string>
     <string name="amount_hint">Enter an amount</string>
     <string name="done_button_text">Done</string>
+    <string name="transaction_title">"How much %1$s would you like to buy?"</string>
     <string name="transaction_success_text">Your transaction was successful</string>
+    <string name="todays_prices">Today\'s prices</string>
+    <string name="btc">BTC</string>
+    <string name="eth">ETH</string>
+    <string name="doge">DOGE</string>
+    <string name="xrp">XRP</string>
+    <string name="ltc">LTC</string>
+    <string name="dash_short">DASH</string>
+    <string name="wallet_acct_balance">$ %1$d</string>
 </resources>

@@ -9,9 +9,12 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import com.decagon.anietie.simplecrypto.R
+import com.decagon.anietie.simplecrypto.databinding.ActivityMainBinding
 import com.decagon.anietie.simplecrypto.databinding.FragmentHomeBinding
 import com.decagon.anietie.simplecrypto.model.domain.Cryptocurrency
 import com.decagon.anietie.simplecrypto.util.DataState
+import com.decagon.anietie.simplecrypto.util.SimpleCryptoSharedPreferences
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.IOException
@@ -78,6 +81,7 @@ class HomeFragment : Fragment() {
             Observer { result ->
                 when (result.status) {
                     DataState.Status.SUCCESS -> {
+                        binding.progressBar?.visibility = View.GONE
                         result.data?.let { list ->
                             Log.d("ResultsSuccess", "subscribeObservers: $list")
                             cryptocurrencies = list
@@ -87,21 +91,22 @@ class HomeFragment : Fragment() {
                         }
                     }
                     DataState.Status.ERROR -> {
+                        binding.progressBar?.visibility = View.INVISIBLE
                         result.message?.let {
                             Snackbar.make(
                                 requireView(),
-                                it,
+                                "An Error occurred. Make sure your internet is turned on",
                                 Snackbar.LENGTH_LONG
-                            ).setAction("Action", null).show()
+                            ).setAction("Action", null)
+                                .setAnchorView(binding.progressBar)
+                                .setTextColor(resources.getColor(R.color.sailor_blue))
+                                .setBackgroundTint(resources.getColor(R.color.mint_500))
+                                .show()
                         }
                     }
                     DataState.Status.LOADING -> {
                         // Implement a progress bar
-                        Snackbar.make(
-                            requireView(),
-                            "Loading...",
-                            Snackbar.LENGTH_LONG
-                        ).setAction("Action", null).show()
+                        binding.progressBar?.visibility = View.VISIBLE
                     }
                 }
             }

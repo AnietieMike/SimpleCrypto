@@ -1,5 +1,6 @@
 package com.decagon.anietie.simplecrypto.ui.home
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -9,7 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.decagon.anietie.simplecrypto.R
 import com.decagon.anietie.simplecrypto.databinding.ItemHomeBinding
 import com.decagon.anietie.simplecrypto.model.domain.Cryptocurrency
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
+/**
+* Adapter class for Cryptocurrency Recycler view
+* */
 class CryptoPricesListAdapter(
     private val cryptocurrencies: List<Cryptocurrency>
 ) : RecyclerView.Adapter<CryptoPricesListAdapter.CryptoPricesViewHolder>() {
@@ -49,6 +55,10 @@ class CryptoPricesListAdapter(
             val marketCapPercent = cryptocurrency.usd_24h_change
             val percent = String.format("%.1f", marketCapPercent).toDouble()
 
+            val df = DecimalFormat("#,###.##")
+            df.roundingMode = RoundingMode.CEILING
+            val formattedPrice = df.format(price)
+
             cryptoIcon.setImageDrawable(
                 ResourcesCompat.getDrawable(
                     cryptoIcon.resources, drawables[layoutPosition], null
@@ -56,7 +66,10 @@ class CryptoPricesListAdapter(
             )
             cryptoSymbol.text = cryptoSymbols[layoutPosition]
             cryptoName.text = cryptocurrency.name
-            "$$price".also { cryptoPrice.text = it }
+            "$$formattedPrice".also { cryptoPrice.text = it }
+            if (percent < 0.0) {
+                cryptoMarketCapPercent.setTextColor(Color.parseColor("#FF0000"))
+            }
             "$percent%".also { cryptoMarketCapPercent.text = it }
         }
     }
